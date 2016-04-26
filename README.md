@@ -27,7 +27,7 @@ $ rails g scaffold User name age:integer admin:boolean
 
 creates `doc/users.apib` file.
 
-You can change `doc` directory by passing `--api-dir=<directory>` flag to the option.
+You can change `doc` directory by passing `--apidoc-dir=<directory>` flag to the option.
 
 
 If you want to generate apiblueprint only, you can use `rails generate apiblueprint` command.
