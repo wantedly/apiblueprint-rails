@@ -1,12 +1,10 @@
-# Apiblueprint::Rails
+# [WIP] apiblueprint-rails
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/apiblueprint/rails`. To experiment with that code, run `bin/console` for an interactive prompt.
-
-TODO: Delete this and the text above, and describe your gem
+apiblueprint-rails creates [API Blueprint](https://apiblueprint.org/) boilerplate when generating scaffold by rails.
 
 ## Installation
 
-Add this line to your application's Gemfile:
+Add this line to your rails application's Gemfile:
 
 ```ruby
 gem 'apiblueprint-rails'
@@ -14,15 +12,31 @@ gem 'apiblueprint-rails'
 
 And then execute:
 
-    $ bundle
-
-Or install it yourself as:
-
-    $ gem install apiblueprint-rails
+```bash
+$ bundle
+```
 
 ## Usage
 
-TODO: Write usage instructions here
+After installing apiblueprint-rails to your rails application, generating scaffold just triggers apiblueprint generator.
+For example,
+
+```bash
+$ rails g scaffold User name age:integer admin:boolean
+```
+
+creates `doc/users.apib` file.
+
+You can change `doc` directory by passing `--api-dir=<directory>` flag to the option.
+
+
+If you want to generate apiblueprint only, you can use `rails generate apiblueprint` command.
+
+```bash
+$ rails g apiblueprint User name age:integer admin:boolean
+```
+
+generates just the same apib output above.
 
 ## Development
 
@@ -38,4 +52,3 @@ Bug reports and pull requests are welcome on GitHub at https://github.com/[USERN
 ## License
 
 The gem is available as open source under the terms of the [MIT License](http://opensource.org/licenses/MIT).
-
