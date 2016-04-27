@@ -36,6 +36,6 @@ class Rails::ApiblueprintGenerator < Rails::Generators::NamedBase
   end
 
   def create_apib_file
-    template "apiblueprint.rb", "doc/#{file_name}.apib"
+    template "apiblueprint.erb", "doc/#{file_name}.apib"
   end
 end
