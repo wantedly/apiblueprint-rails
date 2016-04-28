@@ -11,6 +11,8 @@ class Rails::ApiblueprintGenerator < Rails::Generators::NamedBase
     banner: "field:type field:type"
   )
 
+  class_option "apidoc-dir", type: :string, default: "doc", desc: "Change doc directory by passing"
+
   def set_attribute
     @attrs = Array.new()
     attributes.map do |val|
@@ -32,6 +34,6 @@ class Rails::ApiblueprintGenerator < Rails::Generators::NamedBase
   end
 
   def create_apib_file
-    template "apiblueprint.erb", "doc/#{file_name}.apib"
+    template "apiblueprint.erb", "#{options["apidoc-dir"]}/#{file_name}.apib"
   end
 end
