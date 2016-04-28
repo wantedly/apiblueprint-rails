@@ -15,7 +15,7 @@ Write a [POST] discription.
 
 + Request <%= table_name %> (application/json; charset=utf-8)
     + Attributes
-        <% @attrs.map do |attr| %><% puts(attr) %>+ <%= attr[:name] %>: <%= attr[:init] %> (<%= attr[:type] %>)
+        <% @attrs.map do |attr| %>+ <%= attr[:name] %>: <%= attr[:init] %> (<%= attr[:type] %>)
         <% end %>
 + Response 201 (application/json; charset=utf-8)
     + Attributes (<%= table_name %>)
