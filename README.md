@@ -1,6 +1,6 @@
-# [WIP] apiblueprint-rails
+# apiblueprint-rails
 
-apiblueprint-rails creates [API Blueprint](https://apiblueprint.org/) boilerplate when generating scaffold by rails.
+apiblueprint-rails creates [API Blueprint](https://apiblueprint.org/) boilerplate when calling `rails g apiblueprint`.
 
 ## Installation
 
@@ -18,11 +18,11 @@ $ bundle
 
 ## Usage
 
-After installing apiblueprint-rails to your rails application, generating scaffold just triggers apiblueprint generator.
+After installing apiblueprint-rails to your rails application, use apiblueprint keyword to generate scaffold.
 For example,
 
 ```bash
-$ rails g scaffold User name age:integer admin:boolean
+$ rails g apiblueprint User name age:integer admin:boolean
 ```
 
 creates `doc/users.apib` file.
@@ -30,10 +30,10 @@ creates `doc/users.apib` file.
 You can change `doc` directory by passing `--apidoc-dir=<directory>` flag to the option.
 
 
-If you want to generate apiblueprint only, you can use `rails generate apiblueprint` command.
+If you want to generate apiblueprint only, you can use `rails generate apiblueprint --generate=none` command.
 
 ```bash
-$ rails g apiblueprint User name age:integer admin:boolean
+$ rails g apiblueprint --generate=none User name age:integer admin:boolean
 ```
 
 generates just the same apib output above.

@@ -12,7 +12,7 @@ class Rails::ApiblueprintGenerator < Rails::Generators::NamedBase
   )
 
   class_option "apidoc-dir", type: :string, default: "doc", desc: "Change doc directory by passing"
-  class_option "generate-type", type: :string, default: "scaffold", desc: "Change generate type (Default:scaffold, Other: none, controller, model...)"
+  class_option "generate", type: :string, default: "scaffold", desc: "Change generate type (Default:scaffold, Other: none, controller, model...)"
 
   def set_attribute
     @attrs = Array.new()
@@ -38,8 +38,8 @@ class Rails::ApiblueprintGenerator < Rails::Generators::NamedBase
 
   def create_apib_file
     template "apiblueprint.erb", "#{options["apidoc-dir"]}/#{file_name}.apib"
-    if options["generate-type"] != "none" then
-      invoke(options["generate-type"], [file_name, @args])
+    if options["generate"] != "none" then
+      invoke(options["generate"], [file_name, @args])
     end
   end
 end
